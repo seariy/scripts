@@ -229,8 +229,9 @@ INIT() {
 
   # Create default blank file config
   cat >$INSTALL_PATH/config/default.conf <<EOF
-instance_name = "default"
-dhcp = true
+instance_name = "claw"
+ipv4 = "10.10.10.101"
+dhcp = false
 listeners = [
     "tcp://0.0.0.0:11010",
     "udp://0.0.0.0:11010",
@@ -244,23 +245,11 @@ exit_nodes = []
 uri = "tcp://public.easytier.top:11010"
 
 [network_identity]
-network_name = "default"
-network_secret = "default"
+network_name = "seas"
+network_secret = "seas"
 
 [flags]
-default_protocol = "udp"
-dev_name = ""
-enable_encryption = true
-enable_ipv6 = true
-mtu = 1380
-latency_first = false
-enable_exit_node = false
-no_tun = false
-use_smoltcp = false
-foreign_network_whitelist = "*"
-disable_p2p = false
-relay_all_peer_rpc = false
-disable_udp_hole_punching = false
+no_tun = true
 
 EOF
 
